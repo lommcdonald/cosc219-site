@@ -8,3 +8,5 @@ So far Ive found quite a bit to be difficult as we started brushing up on html i
 Signing up for the github student account took longer than expected(got rejected)
 
 AI use declaration: VSCODE auto complete. However I turned it off shortly after beginning to try and get some good old fasion manual reps in.
+
+AI used to figure out why my table wasnt displaying correctly, informed me my basic HTML Formatting with <body> position was incorrect, re-read notes after to verify.
