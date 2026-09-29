@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --brand: #0c3727;
+    --ink: #12181f;
+    --muted: #3c1b03;
+    --space: 1rem;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--ink);
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--brand);
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.17rem;
+}
