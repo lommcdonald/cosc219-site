@@ -11,4 +11,4 @@ AI use declaration: VSCODE auto complete. However I turned it off shortly after 
 
 AI used to figure out why my table wasnt displaying correctly, informed me my basic HTML Formatting with <body> position was incorrect, re-read notes after to verify.
 
-Lab2 AI Declaration used to check work and errors and suggest improvements, explain sections of the notes I found confusing
+Lab2 AI Declaration used to check work and errors and suggest improvements, explain sections of the notes I found confusing. Was tempted to just bang the whole thing out with AI but ill just take the partials and hopefully lock in next week
