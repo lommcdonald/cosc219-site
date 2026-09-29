@@ -47,3 +47,9 @@ nav a {
   font-size: 0.875rem;
   text-align: center;
 }
+.card {
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: var(--space);
+  margin-bottom: var(--space);
+}
