@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" />
   <title>Contact</title>
 </head>
+
 <body>
-  
+  <header>
+    <h1>Contact Me</h1>
+    < <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Projects</a></li>
+      </ul>
+  </header>
+
+  <main>
+    <h2>Contact me</h2>
+    <p>Please fill out the form below to send me a message.</p>
+
+    <form action="#" method="post">
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div>
+        <label for="email">email address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div>
+        <label for="subject">subject</label>
+        <select id="subject" name="subject">
+          <option value="cis">Computer Information Systems Program</option>
+          <option value="fishing">Fly Fishing</option>
+          <option value="fantasy">Yahoo Fantasy Hockey League</option>
+          <option value="other">other</option>
+        </select>
+      </div>
+
+     <fieldset>
+    <legend>Contact</legend>
+    <input type="radio" id="r-email" name="contact" value="email">
+    <label for="r-email">email</label>
+
+    <input type="radio" id="r-phone" name="contact" value="phone">
+    <label for="r-phone">phone</label>
+  </fieldset>
+
+  <div>
+    <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+    <label for="subscribe">subscribe</label>
+  </div>
+
+  <div>
+    <label for="message">message</label>
+    <textarea id="message" name="message" rows="5"></textarea>
+  </div>
+
+  <button type="submit">submit</button>
+</form>
+  </main>
+  <footer>in progress...</footer>
 </body>
+
 </html>
