@@ -29,3 +29,21 @@ h2 {
 h3 {
     font-size: 1.17rem;
 }
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: var(--space);
+}
+
+nav a {
+  color: var(--brand);
+  text-decoration: none;
+  margin-right: var(--space);
+}
+
+.site-footer {
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
