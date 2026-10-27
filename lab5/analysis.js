@@ -118,7 +118,9 @@ function findByName(trails, name) {
    ---------------------------------------------------------------------- */
 
 function sortedByDistance(trails) {
-
+    const copyArr = [...trails];
+    return copyArr.sort((t1 , t2) => t1.km - t2.km);
+    
 }
 
 
