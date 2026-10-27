@@ -99,6 +99,8 @@ function openTrails(trails) {
    ---------------------------------------------------------------------- */
 
 function findByName(trails, name) {
+    const inputName = name.toLowerCase();
+    return trails.find(t => t.name.toLowerCase() === inputName);
 
 }
 
