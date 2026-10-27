@@ -75,7 +75,7 @@ function hasWon(word, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function trailNames(trails) {
-
+    return trails.map(t => t.name);
 }
 
 
@@ -85,7 +85,7 @@ function trailNames(trails) {
    ---------------------------------------------------------------------- */
 
 function openTrails(trails) {
-
+    return trails.filter(t => !t.closed);
 }
 
 
