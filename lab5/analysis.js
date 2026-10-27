@@ -56,8 +56,11 @@ function revealWord(word, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function hasWon(word, guessedLetters) {
-    
-
+    const letters = word.split("");
+    const matched = letters.every((char)=>{
+        return guessedLetters.includes(char);
+    });
+    return matched;
 }
 
 
