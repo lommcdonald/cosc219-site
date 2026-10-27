@@ -175,9 +175,25 @@ function totalDistance(trails) {
    The accumulator does not have to be a number â€” here it is a trail.
    ---------------------------------------------------------------------- */
 
-function longestTrail(trails) {
+// function longestTrail(trails) {
+//     const copyArr = [...trails].sort((t1 , t2) => t1.km - t2.km);
+//     return copyArr[copyArr.length - 1];
+// }
 
-}
+    function longestTrail(trails) {
+        if(trails.length === 0){
+            return undefined;
+        }
+        const long = trails.reduce((longest, current)=>{
+            if(longest.km < current.km){
+                return current;
+            }else{
+               return longest; 
+            }
+        });
+        return long;
+
+    }
 
 
 /* C5 â€” countByRating(trails)
@@ -190,7 +206,12 @@ function longestTrail(trails) {
    ---------------------------------------------------------------------- */
 
 function countByRating(trails) {
+//    const start = {};
+    return (trails.reduce((count, t) => {
+        count[t.rating] = (count[t.rating] ?? 0) + 1;
 
+        return count;
+    },{}));
 }
 
 
