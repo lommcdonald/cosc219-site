@@ -134,6 +134,7 @@ function sortedByDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function anyClosed(trails) {
+    return trails.some(t => t.closed);
 
 }
 
@@ -145,7 +146,9 @@ function anyClosed(trails) {
    ---------------------------------------------------------------------- */
 
 function allUnder(trails, limit) {
-
+    return trails.every(t =>{
+        return limit > t.km;
+    });
 }
 
 
