@@ -245,9 +245,10 @@ function openDistance(trails) {
 
 function summaryLines(trails) {
     return trails.map(t =>
-        `${t.name} — ${t.km} km, ${t.rating}${t.closed ? " (closed)" : ""}`
+        `${t.name} â€” ${t.km} km, ${t.rating}${t.closed ? " (closed)" : ""}`
     );
 }
+// needed â€” instead of - or the emDash...
 
 
 /* D3 â€” report(trails)
