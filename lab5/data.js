@@ -4,7 +4,7 @@
 const TRAILS = [
     { name: "Knox Mountain", km: 2.8, rating: "moderate", gain: 250, closed: false, visits: 4200 },
     { name: "Mission Creek", km: 16.0, rating: "easy", gain: 90, closed: false, visits: 3100 },
-    { name: "Myra Cansyon", km: 12.0, rating: "easy", gain: 120, closed: false, visits: 8800 },
+    { name: "Myra Canyon", km: 12.0, rating: "easy", gain: 120, closed: false, visits: 8800 },
     { name: "Bear Creek", km: 5.5, rating: "moderate", gain: 310, closed: false, visits: 2600 },
     { name: "Rose Valley", km: 7.2, rating: "moderate", gain: 280, closed: true, visits: 1400 },
     { name: "Kalamoir", km: 3.1, rating: "easy", gain: 60, closed: false, visits: 1900 },
