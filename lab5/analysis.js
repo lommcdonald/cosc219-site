@@ -162,7 +162,8 @@ function allUnder(trails, limit) {
    ---------------------------------------------------------------------- */
 
 function totalDistance(trails) {
-
+    const total = trails.reduce((s, t) => s + t.km, 0);
+    return Math.round(total * 10) / 10;
 }
 
 
