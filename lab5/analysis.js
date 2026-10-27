@@ -29,6 +29,18 @@
    ---------------------------------------------------------------------- */
 
 function revealWord(word, guessedLetters) {
+    const letters = word.split("");
+
+    const charArr = letters.map((char) => {
+
+        if (guessedLetters.includes(char)) {
+            return char;
+        } else {
+            return "_";
+        }
+    });
+
+    return charArr.join("");
 
 }
 
@@ -44,6 +56,7 @@ function revealWord(word, guessedLetters) {
    ---------------------------------------------------------------------- */
 
 function hasWon(word, guessedLetters) {
+    
 
 }
 
