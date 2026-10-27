@@ -228,6 +228,9 @@ function countByRating(trails) {
 
 function openDistance(trails) {
 
+    totalOpen = trails.filter(t => !t.closed).map(t => t.km).reduce((total, dist) => total + dist, 0);
+
+    return (totalOpen * 10) / 10;
 }
 
 
