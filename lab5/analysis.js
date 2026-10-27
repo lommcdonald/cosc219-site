@@ -57,7 +57,7 @@ function revealWord(word, guessedLetters) {
 
 function hasWon(word, guessedLetters) {
     const letters = word.split("");
-    const matched = letters.every((char)=>{
+    const matched = letters.every((char) => {
         return guessedLetters.includes(char);
     });
     return matched;
@@ -119,8 +119,8 @@ function findByName(trails, name) {
 
 function sortedByDistance(trails) {
     const copyArr = [...trails];
-    return copyArr.sort((t1 , t2) => t1.km - t2.km);
-    
+    return copyArr.sort((t1, t2) => t1.km - t2.km);
+
 }
 
 
@@ -146,7 +146,7 @@ function anyClosed(trails) {
    ---------------------------------------------------------------------- */
 
 function allUnder(trails, limit) {
-    return trails.every(t =>{
+    return trails.every(t => {
         return limit > t.km;
     });
 }
@@ -180,20 +180,20 @@ function totalDistance(trails) {
 //     return copyArr[copyArr.length - 1];
 // }
 
-    function longestTrail(trails) {
-        if(trails.length === 0){
-            return undefined;
-        }
-        const long = trails.reduce((longest, current)=>{
-            if(longest.km < current.km){
-                return current;
-            }else{
-               return longest; 
-            }
-        });
-        return long;
-
+function longestTrail(trails) {
+    if (trails.length === 0) {
+        return undefined;
     }
+    const long = trails.reduce((longest, current) => {
+        if (longest.km < current.km) {
+            return current;
+        } else {
+            return longest;
+        }
+    });
+    return long;
+
+}
 
 
 /* C5 â€” countByRating(trails)
@@ -206,12 +206,12 @@ function totalDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function countByRating(trails) {
-//    const start = {};
+    //    const start = {};
     return (trails.reduce((count, t) => {
         count[t.rating] = (count[t.rating] ?? 0) + 1;
 
         return count;
-    },{}));
+    }, {}));
 }
 
 
@@ -228,7 +228,7 @@ function countByRating(trails) {
 
 function openDistance(trails) {
 
-    totalOpen = trails.filter(t => !t.closed).map(t => t.km).reduce((total, dist) => total + dist, 0);
+    const totalOpen = trails.filter(t => !t.closed).map(t => t.km).reduce((total, dist) => total + dist, 0);
 
     return (totalOpen * 10) / 10;
 }
@@ -244,7 +244,9 @@ function openDistance(trails) {
    ---------------------------------------------------------------------- */
 
 function summaryLines(trails) {
-
+    return trails.map(t =>
+        `${t.name} — ${t.km} km, ${t.rating}${t.closed ? " (closed)" : ""}`
+    );
 }
 
 
@@ -267,5 +269,15 @@ function summaryLines(trails) {
    ---------------------------------------------------------------------- */
 
 function report(trails) {
+    const open = openTrails(trails);
+    const longest = longestTrail(open);
 
+    return {
+        total: trails.length,
+        open: open.length,
+        closed: trails.length - open.length,
+        openKm: openDistance(trails),
+        longestOpen: longest ? longest.name : null,
+        byRating: countByRating(trails)
+    };
 }
