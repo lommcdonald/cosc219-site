@@ -28,6 +28,10 @@ h2,
 h3 {
     color: var(--brand);
 }
+main h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
 h1 {
     font-size: 2.25rem;
@@ -180,3 +184,18 @@ td {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
+.page-layout img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.page-layout section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
