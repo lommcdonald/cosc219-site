@@ -114,8 +114,10 @@ export class BikeTrail extends Trail {
      `this` — touch `this` before that line and you get a ReferenceError,
      because the instance does not exist yet.
      ---------------------------------------------------------------- */
-  constructor(name, km, rating, gain, surface) {
 
+  constructor(name, km, rating, gain, surface) {
+   super(name, km, rating, gain);
+   this.surface = surface;
   }
 
 
@@ -126,13 +128,17 @@ export class BikeTrail extends Trail {
      super.describe() gives you the first part.
      ---------------------------------------------------------------- */
   describe() {
-
+   return `${this.name} - ${this.km} km, ${this.rating} - ${this.surface}`;
   }
 
 
   /* toJSON() — everything the parent returns, plus surface.
      Spread super.toJSON() rather than listing the fields again. */
   toJSON() {
+   return{
+      super.toJSON(),
+      surface: this.surface
+   };
 
   }
 }
