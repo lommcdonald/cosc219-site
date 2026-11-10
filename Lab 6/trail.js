@@ -128,7 +128,8 @@ export class BikeTrail extends Trail {
      super.describe() gives you the first part.
      ---------------------------------------------------------------- */
   describe() {
-   return `${this.name} — ${this.km} km, ${this.rating} — ${this.surface}`;
+   return `${super.describe()} — ${this.surface}`;
+   //        ^^^ Ai check fix
   }
 
 

@@ -8,4 +8,4 @@ const outer   = { name: 'X', meta: { tags: ['steep'] } };
 const shallow = { ...outer };
 shallow.meta.tags.push('rocky');   // what is outer.meta.tags? ['steep', 'rocky']
 
-//({ x: 1 } === { x: 1 }) //false commented out as it was "Always true in vscode and wouldnt let the checkLab run"
+({ x: 1 } === { x: 1 })

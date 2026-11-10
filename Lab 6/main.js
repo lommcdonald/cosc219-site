@@ -17,7 +17,8 @@ const registry = TrailRegistry.fromData(Trail_Data)
        
 */
 //Build a registry from the data, close Bear Creek, then:
-const registry = TrailRegistry.fromData(Trail_Data);
+const registry = TrailRegistry.fromData(TRAIL_DATA);
+                                      //^^^ Missing capitalization
 registry.find("Bear Creek").close();
 //· put one <li> per trail into #trails, using describeAll()
 

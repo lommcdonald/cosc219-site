@@ -103,7 +103,8 @@ export class TrailRegistry {
   static fromData(rows) {
    const registry = new TrailRegistry();
    for(const row of rows){
-      const {name, km, rating, gain, surface} = row;
+      const {name, km, rating, gain = 0, surface} = row;
+                                  //^^^ missing default value  ai check
       if(surface !== undefined){
          registry.add(new BikeTrail(name, km, rating, gain, surface));
       }else{
