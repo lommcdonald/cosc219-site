@@ -55,20 +55,20 @@ export class Trail {
          trail.close().describe()
      ---------------------------------------------------------------- */
   close() {
-   this.closed=true;
-   return this.closed;
+   this.#closed=true;
+   return this;
   }
 
   open() {
    this.#closed = false;
-   return this.#closed;
+   return this;
   }
 
 
   /* describe()  →  "Knox Mountain — 2.8 km, moderate"
      Note the em dash and the comma. Use a template literal. */
   describe() {
-   return `${this.name} - ${this.km} km, ${this.rating}`;
+   return `${this.name} — ${this.km} km, ${this.rating}`;
 
   }
 
@@ -100,7 +100,7 @@ export class Trail {
 
        Trail.fromObject({ name: "Z", km: 3, rating: "easy" }).gain  →  0
      ---------------------------------------------------------------- */
-  static fromObject(obj) {
+  static fromObject({ name, km, rating, gain =0}) {
       return new Trail(name, km, rating, gain);
   }
 }
@@ -115,7 +115,7 @@ export class BikeTrail extends Trail {
      because the instance does not exist yet.
      ---------------------------------------------------------------- */
 
-  constructor(name, km, rating, gain, surface) {
+  constructor(name, km, rating, gain, surface = "gravel") {
    super(name, km, rating, gain);
    this.surface = surface;
   }
@@ -128,7 +128,7 @@ export class BikeTrail extends Trail {
      super.describe() gives you the first part.
      ---------------------------------------------------------------- */
   describe() {
-   return `${this.name} - ${this.km} km, ${this.rating} - ${this.surface}`;
+   return `${this.name} — ${this.km} km, ${this.rating} — ${this.surface}`;
   }
 
 

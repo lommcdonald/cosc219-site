@@ -4,24 +4,26 @@
 */
 
 // import the two classes from ./trail.js — note the .js is required
-
+import {Trail, BikeTrail} from "./trail.js"
 
 export class TrailRegistry {
 
   /* The array is PRIVATE. Nothing outside may push to it, sort it or
      empty it — this class decides what happens to the collection. */
   // #trails = [];
-
+   #trails = [];
 
   /* Accept an optional array of Trails and add each one. */
   constructor(trails = []) {
-
+   for(const trail of trails){
+      this.add(trails);
+   }
   }
 
 
   /* get size — how many trails. */
   get size() {
-
+   return this.#trails.length;
   }
 
 
@@ -32,7 +34,7 @@ export class TrailRegistry {
      this class. One of the tests does exactly that.
      ---------------------------------------------------------------- */
   get all() {
-
+   return [this.#trails];
   }
 
 
@@ -42,7 +44,11 @@ export class TrailRegistry {
      Use `instanceof`. Remember a BikeTrail IS a Trail.
      ---------------------------------------------------------------- */
   add(trail) {
-
+   if(!(trail instanceof Trail)){
+      throw new TypeError("trail instance = true");
+   }
+   this.#trails.push(trail);
+   return this;
   }
 
 
