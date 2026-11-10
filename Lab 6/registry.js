@@ -66,7 +66,7 @@ export class TrailRegistry {
 
   /* get openTrails — every trail that is not closed. */
   get openTrails(){
-   return this.#trails.filter(t => !t.itClosed);
+   return this.#trails.filter(t => !t.isClosed);
   }
 
 
