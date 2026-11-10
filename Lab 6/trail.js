@@ -136,7 +136,7 @@ export class BikeTrail extends Trail {
      Spread super.toJSON() rather than listing the fields again. */
   toJSON() {
    return{
-      super.toJSON(),
+      ...super.toJSON(),
       surface: this.surface
    };
 
