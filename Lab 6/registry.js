@@ -10,13 +10,12 @@ export class TrailRegistry {
 
   /* The array is PRIVATE. Nothing outside may push to it, sort it or
      empty it — this class decides what happens to the collection. */
-  // #trails = [];
    #trails = [];
 
   /* Accept an optional array of Trails and add each one. */
   constructor(trails = []) {
    for(const trail of trails){
-      this.add(trails);
+      this.add(trail);
    }
   }
 
@@ -34,7 +33,7 @@ export class TrailRegistry {
      this class. One of the tests does exactly that.
      ---------------------------------------------------------------- */
   get all() {
-   return [this.#trails];
+   return [...this.#trails];
   }
 
 
@@ -54,8 +53,8 @@ export class TrailRegistry {
 
   /* find(name) — the matching Trail, ignoring case, or undefined. */
   find(name) {
-   return this.#trails.find(t => t.ame.toLowerCase() === name.toLowerCase());
-)
+   return this.#trails.find(t => t.name.toLowerCase() === name.toLowerCase());
+
   }
 
 
@@ -103,9 +102,9 @@ export class TrailRegistry {
      ---------------------------------------------------------------- */
   static fromData(rows) {
    const registry = new TrailRegistry();
-   for(const trail of trails){
-      const {name, km, rating, gain, surface} = trail;
-      if(surface !== null){
+   for(const row of rows){
+      const {name, km, rating, gain, surface} = row;
+      if(surface !== undefined){
          registry.add(new BikeTrail(name, km, rating, gain, surface));
       }else{
          registry.add(new Trail(name, km, rating, gain));
