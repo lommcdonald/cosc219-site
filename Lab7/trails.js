@@ -61,12 +61,7 @@ export function addTrail(trails, trail) {
    An id that is not there simply changes nothing. */
 
 export function removeTrail(trails, id) {
-   return trails.map(t => {
-      if(t.id === id){
-         return {...t, closed: !t.closed};
-      }
-      return t;
-   });
+   return trails.filter(t => t.id !== id);
 }
 
 
@@ -77,7 +72,12 @@ export function removeTrail(trails, id) {
    ---------------------------------------------------------------------- */
 
 export function toggleTrail(trails, id) {
-
+   return trails.map(t => {
+      if(t.id === id){
+         return {...t, closed: !t.closed};
+      }
+      return t;
+   });
 }
 
 
@@ -99,5 +99,14 @@ export function toggleTrail(trails, id) {
    ---------------------------------------------------------------------- */
 
 export function findAction(target) {
+   const button = target.closest("button[data-action]");
+   if(!button) return null;
 
+   const row = button.closest(".trail[data-id]");
+   if(!row) return null;
+
+   return{
+      action: button.dataset.action,
+      id:row.dataset.id
+   };
 }
