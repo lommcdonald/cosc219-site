@@ -24,7 +24,7 @@ export function makeTrail(name, km) {
       id: String(Date.now()) + Math.random().toString(16).slice(2,8),
       name: name.trim(),
       km: Number(km),
-      close: false
+      closed: false
    };
 }
 
@@ -43,7 +43,7 @@ export function makeTrail(name, km) {
    ---------------------------------------------------------------------- */
 
 export function isValidTrail(name, km) {
-   const trimmedName = name.time();
+   const trimmedName = name.trim();
    const distance = Number(km);
    return trimmedName.length > 0 && Number.isFinite(distance) && distance > 0;
 }

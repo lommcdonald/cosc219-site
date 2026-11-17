@@ -3,13 +3,24 @@
 
 
 ***AI Declaration:***
- Used to check if what i had for toggle trail was close. it was not... then it gave me this↓↓↓ which i mean... what?.. alot going on then used ai to explain and help me get closer to better understand statements like the one below and potentially arrive at more concise code on my own
- ```
- export function toggleTrail(trails, id) {
-    return trails.map(t => t.id === id ? { ...t, closed: !t.closed } : t);
-}
+ Used to better understand topics, trouble shoot, fix bugs find typos etc.
+
+ Help study event delegation, storage parting etc in conjucntion with midterm studying/prep
+
+Used AI to get the website working properly for part D, pointed to adding the DOM section in app.js
+
+
+
 
 ```
+Q&A Section 
 
+Why the listener is on the list rather than the buttons?
 
+```
+The click listener is attachend on the because the buttons are deconstructied then reinstanciated ever time the list refreshes hich would eliminate the listeners attached to them directly
+
+`what happens if loadTrails does not guard against corrupt dad?`
+
+if we didnt guard against corrupt data in the loadTrails trying to JSON.parse() will cause an error an break the code on start up
 

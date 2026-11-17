@@ -8,6 +8,17 @@ import { makeTrail, isValidTrail, addTrail, removeTrail, toggleTrail, findAction
 import { createTrailItem, renderTrails, summaryText } from './render.js';
 import { saveTrails, loadTrails, clearTrails } from './storage.js';
 
+
+// DOM section to get the app to work in part d
+const form = document.querySelector("#add-form");
+const nameInput = document.querySelector("#name");
+const kmInput = document.querySelector("#km");
+const errorEl = document.querySelector("#error");
+const summaryEl = document.querySelector("#summary");
+const listEl = document.querySelector("#trail-list");
+const clearBtn = document.querySelector("#clear");
+
+
 /* Load the saved trails into a `let` — the array is replaced, not edited,
    every time something changes. */
 let trails = loadTrails();
