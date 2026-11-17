@@ -21,7 +21,7 @@
 
 export function makeTrail(name, km) {
    return{
-      id: String(Date.now()) + Math.random().toString(16).slice(2,8);
+      id: String(Date.now()) + Math.random().toString(16).slice(2,8),
       name: name.trim(),
       km: Number(km),
       close: false
