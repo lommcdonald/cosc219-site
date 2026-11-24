@@ -44,7 +44,7 @@ export function render(trails) {
     
     const trailDistSpan = document.createElement("span");
     trailDistSpan.className = "trail-km";
-    trailDistSpan.textContent = `{trail.km} km`;
+    trailDistSpan.textContent = `${trail.km} km`;
     
     li.append(trailNameSpan, trailDistSpan);
     results.append(li);
