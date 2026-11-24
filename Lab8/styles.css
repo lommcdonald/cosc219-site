@@ -7,6 +7,10 @@
   --line:  #dce1e6;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
@@ -55,7 +59,7 @@ button {
 input:focus,
 select:focus,
 button:focus {
-  outline: none;
+  outline: 1px solid;
 }
 
 #count { color: var(--muted); }
