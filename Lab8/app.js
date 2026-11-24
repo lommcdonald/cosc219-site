@@ -36,9 +36,17 @@ export function render(trails) {
   trails.forEach((trail) => {
     const li = document.createElement("li");
     li.className = "trail";
-    li.innerHTML =
-      '<span class="trail-name">' + trail.name + '</span>' +
-      '<span class="trail-km">' + trail.km + ' km</span>';
+
+    const trailNameSpan = document.createElement("span");
+    trailNameSpan.className = "trail-name";
+    trailNameSpan.textContent = trail.name;
+    
+    
+    const trailDistSpan = document.createElement("span");
+    trailDistSpan.className = "trail-km";
+    trailDistSpan.textContent = `{trail.km} km`;
+    
+    li.append(trailNameSpan, trailDistSpan);
     results.append(li);
   });
 
@@ -56,6 +64,7 @@ function apply() {
 
 
 form.addEventListener("submit", () => {
+  event.preventDefault();
   apply();
 });
 
